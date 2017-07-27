@@ -170,5 +170,23 @@ namespace ComputerPlus.API
             Globals.ExternalUI.Add(new ExternalUI(guid, displayName, author, creator, onOpen, onClose));
             return guid;
         }
+
+        /// <summary>
+        /// Add a Rage.Ped object to the Recent PedSearches List 
+        /// </summary>
+        /// <param name="ped">The Rage.Ped to be added.</param>
+        public static void AddPedToRecent(Ped ped)
+        {
+            Globals.AddPedToRecent(ped);
+        }
+
+        /// <summary>
+        /// Add a Rage.Ped object to the Recent Vehicle Searches List 
+        /// </summary>
+        /// <param name="vehicle">The Rage.Vehicle to be added.</param>
+        public static void AddVehicleToRecent(Vehicle vehicle)
+        {
+            Globals.AddVehicleToRecent(vehicle);
+        }
     }
 }

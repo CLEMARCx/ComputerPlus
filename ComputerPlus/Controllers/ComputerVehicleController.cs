@@ -163,8 +163,17 @@ namespace ComputerPlus.Interfaces.ComputerVehDB
 
 
             return ComputerPlusEntity.CloneFrom(owner, vehicle, vehiclePersona);
-        } 
-        
+        }
+
+        internal static void AddVehicleToRecent(Vehicle vehicle)
+        {
+            if(vehicle != null)
+            {
+                var entity = ComputerPlusEntity.CreateFrom(vehicle);
+                RecentSearches.Add(entity);
+            }
+        }
+
         private static Ped FindRandomPed()
         {
             var rnd = new Random(DateTime.Now.Millisecond);

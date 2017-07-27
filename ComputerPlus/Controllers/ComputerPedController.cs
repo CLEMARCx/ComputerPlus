@@ -80,6 +80,15 @@ namespace ComputerPlus.Interfaces.ComputerPedDB
             return RecentSearches;
         }
 
+        internal static void AddPedToRecent(Ped ped)
+        {
+            if(ped != null)
+            {
+                var entity = ComputerPlusEntity.CreateFrom(ped);
+                RecentSearches.Add(entity);
+            }
+        }
+
         internal static String GetRandomStreetAddress()
         {
             var rnd = new Random(DateTime.Now.Millisecond);

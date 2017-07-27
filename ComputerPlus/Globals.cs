@@ -90,8 +90,7 @@ namespace ComputerPlus
         {
             get;
             internal set;
-        } = null;
-
+        } = null;     
 
         internal static bool HasTrafficTicketsInHand()
         {
@@ -184,6 +183,16 @@ namespace ComputerPlus
         {
             if (text == null) Clipboard = String.Empty;
             else Clipboard = String.Empty;
+        }
+
+        internal static void AddPedToRecent(Rage.Ped ped)
+        {
+            Interfaces.ComputerPedDB.ComputerPedController.AddPedToRecent(ped);  
+        }
+
+        internal static void AddVehicleToRecent(Rage.Vehicle vehicle)
+        {
+            Interfaces.ComputerVehDB.ComputerVehicleController.AddVehicleToRecent(vehicle);
         }
     }
 }
